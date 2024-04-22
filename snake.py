@@ -35,6 +35,12 @@ class Snake:
     def extend(self):
         self.add_segment(self.segments[-1].position())
 
+    def reset(self):
+        self.segments =[]
+        self.create_snake()
+
+
+
     def move(self):
         # 2. Move the snake
             for seg_num in range(len(self.segments)-1,0,-1):

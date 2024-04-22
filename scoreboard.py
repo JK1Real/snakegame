@@ -11,8 +11,9 @@ class Scoreboard(Turtle):
         self.color('red')
         
         self.score=0
+        self.high_score = 0
         self.penup()
-        self.goto(0,300)
+        self.goto(-100,300)
         self.write(arg=f"score : {self.score}",align=ALGNMENT,font=FONT)
     
     def increase_score(self):
@@ -23,4 +24,15 @@ class Scoreboard(Turtle):
     def gameover(self):
         self.goto(0,0)
         self.write("Game Over",align=ALGNMENT,font=FONT)
+
+    def reset(self):
+        self.score = 0
+        self.clear()
+        self.write(arg=f"score : {self.score}",align=ALGNMENT,font=FONT)
+
+    def highest_score(self, highscore):
         
+        self.high_score = highscore
+        self.clear()
+        self.goto(100,320)
+        self.write(arg=f"Highest Score : {self.highest_score}",align=ALGNMENT,font=FONT)        
